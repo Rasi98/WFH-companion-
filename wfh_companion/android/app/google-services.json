@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944391082472",
+    "project_id": "wfh-companion-da5b6",
+    "storage_bucket": "wfh-companion-da5b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944391082472:android:293199f6af87728d02545d",
+        "android_client_info": {
+          "package_name": "com.example.wfh_companion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944391082472-lmdo83ak3tnc1i55167pt7lcgp923tbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1UFplmfPOZnrvMoW917mXq-dQ40kgzF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944391082472-lmdo83ak3tnc1i55167pt7lcgp923tbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
