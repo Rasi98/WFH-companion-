@@ -6,8 +6,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'WHF-Companion',
-      theme: ThemeData(accentColor: Colors.orange, primarySwatch: Colors.blue),
       home: LoginScreen(),
     );
   }

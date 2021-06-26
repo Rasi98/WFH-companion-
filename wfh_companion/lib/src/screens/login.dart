@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +16,12 @@ class _LoginScreenState extends State<LoginScreen> {
         body: Column(
           children: [
             Container(
-              child: Image(
-                width: 1000,
-                image: AssetImage("assets/img-1.png"),
-              ),
-            )
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * .4,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill, image: AssetImage("assets/img-1.png"))),
+            ),
           ],
         ));
   }
