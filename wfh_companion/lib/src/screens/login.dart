@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,21 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String _email, _password;
+  String _email = "", _password = "";
   final auth = FirebaseAuth.instance;
+  bool validated = false;
+  bool invalidDetails = false;
+  final emailCon = TextEditingController();
+  final passwordCon = TextEditingController();
+
+  //form field validate
+  bool validate() {
+    if (EmailValidator.validate(_email) && !_password.isEmpty) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,16 +80,22 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(
               height: 50,
+              child: Text(
+                invalidDetails ? "Invalid Login Details.." : "",
+                style: TextStyle(color: Colors.red, fontSize: 20),
+              ),
             ),
             //Email
             Container(
               child: TextField(
+                controller: emailCon,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     hintText: "Email", border: InputBorder.none),
                 onChanged: (value) {
                   setState(() {
                     _email = value.trim();
+                    validated = validate();
                   });
                 },
               ),
@@ -93,6 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
             //password
             Container(
               child: TextField(
+                controller: passwordCon,
                 obscureText: true,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -100,6 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onChanged: (value) {
                   setState(() {
                     _password = value.trim();
+                    validated = validate();
                   });
                 },
               ),
@@ -111,6 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: MediaQuery.of(context).size.height * .08,
               width: MediaQuery.of(context).size.width * 0.9,
             ),
+
             SizedBox(
               height: 20,
             ),
@@ -119,6 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
               height: MediaQuery.of(context).size.height * .07,
               minWidth: MediaQuery.of(context).size.width * .4,
               child: FlatButton(
+                  disabledColor: Colors.red,
+                  disabledTextColor: Colors.white,
                   color: Colors.yellow,
                   child: Text(
                     "LOGIN",
@@ -126,19 +151,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
-                  onPressed: () async {
-                    try {
-                      UserCredential result =
-                          await auth.signInWithEmailAndPassword(
-                              email: _email, password: _password);
-                      User userOB = result.user;
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
-                    } on FirebaseAuthException catch (err) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
-                    }
-                  }),
+                  onPressed: validated
+                      ? () async {
+                          print(validated);
+                          try {
+                            UserCredential result =
+                                await auth.signInWithEmailAndPassword(
+                                    email: _email, password: _password);
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()));
+                          } on FirebaseAuthException catch (err) {
+                            emailCon.clear();
+                            passwordCon.clear();
+                            setState(() {
+                              _email = "";
+                              _password = "";
+                              invalidDetails = true;
+                              validated = false;
+                            });
+                          }
+                        }
+                      : null),
             ),
           ],
         ),
