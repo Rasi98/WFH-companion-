@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      //backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -45,7 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             //diveder
             Divider(
-              color: Colors.yellow,
               height: 10,
               thickness: 10,
             ),
@@ -53,7 +52,6 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 15,
             ),
             Divider(
-              color: Colors.yellow.shade600,
               height: 10,
               thickness: 20,
             ),
@@ -66,13 +64,13 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Icon(
                   Icons.person_pin,
-                  color: Colors.yellow,
+                  color: Theme.of(context).primaryColor,
                   size: 50,
                 ),
                 Text(
                   "LOGIN",
-                  style: TextStyle(
-                      color: Colors.yellow,
+                  style:TextStyle(
+                      color: Theme.of(context).primaryColor,
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
                 )
@@ -101,14 +99,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.yellow, width: 5.0),
+                  color: Theme.of(context).accentColor,
+                  border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
               width: MediaQuery.of(context).size.width * 0.9,
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             //password
             Container(
@@ -127,8 +125,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.yellow, width: 5.0),
+                  color: Theme.of(context).accentColor,
+                  border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
               width: MediaQuery.of(context).size.width * 0.9,
@@ -142,12 +140,12 @@ class _LoginScreenState extends State<LoginScreen> {
               height: MediaQuery.of(context).size.height * .07,
               minWidth: MediaQuery.of(context).size.width * .4,
               child: FlatButton(
-                  disabledColor: Colors.red,
+                  disabledColor: Theme.of(context).accentColor,
                   disabledTextColor: Colors.white,
-                  color: Colors.yellow,
+                  color: Theme.of(context).buttonColor,
                   child: Text(
                     "LOGIN",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.headline6,
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
