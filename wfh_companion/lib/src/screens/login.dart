@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:email_validator/email_validator.dart';
@@ -5,6 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wfh_companion/src/screens/home.dart';
+import 'package:wfh_companion/src/component/button_component.dart';
+import 'package:wfh_companion/src/component/textfield_component.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -69,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 Text(
                   "LOGIN",
-                  style:TextStyle(
+                  style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontSize: 30,
                       fontWeight: FontWeight.bold),
@@ -83,13 +86,39 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
+
+            //TextField component email
+            // TextFieldV1(
+            //   fieldcolor: Colors.white,
+            //   padding: 10,
+            //   bordercolor: Theme.of(context).primaryColor,
+            //   borderwidth: 2.0,
+            //   borderradius: 10.0,
+            //   controler: emailCon,
+            //   height: .08,
+            //   width: 0.9,
+            //   obsecure: false,
+            //   keyboardtype: TextInputType.emailAddress,
+            //   textcolor: Colors.black,
+            //   hint: "Email",
+            //   hintcolor: Colors.black,
+            //   onchange: (value) {
+            //     setState(() {
+            //       _email = value.trim();
+            //       validated = validate();
+            //     });
+            //   },
+            // ),
             //Email
             Container(
               child: TextField(
                 controller: emailCon,
+                style: TextStyle(color: Colors.black),
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                    hintText: "Email",hintStyle: TextStyle(color: Colors.black),border: InputBorder.none),
+                    hintText: "Email",
+                    hintStyle: TextStyle(color: Colors.black),
+                    border: InputBorder.none),
                 onChanged: (value) {
                   setState(() {
                     _email = value.trim();
@@ -100,22 +129,51 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
+                  border: Border.all(
+                      color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
               width: MediaQuery.of(context).size.width * 0.9,
             ),
+
             SizedBox(
               height: 20,
             ),
+
+            //password field Component
+            // TextFieldV1(
+            //   fieldcolor: Colors.white,
+            //   padding: 10,
+            //   bordercolor: Theme.of(context).primaryColor,
+            //   borderwidth: 2.0,
+            //   borderradius: 10.0,
+            //   controler: passwordCon,
+            //   height: .08,
+            //   obsecure: true,
+            //   width: 0.9,
+            //   keyboardtype: TextInputType.emailAddress,
+            //   textcolor: Colors.black,
+            //   hint: "Password",
+            //   hintcolor: Colors.black,
+            //   onchange: (value) {
+            //     setState(() {
+            //       _password = value.trim();
+            //       validated = validate();
+            //     });
+            //   },
+            // ),
+
             //password
             Container(
               child: TextField(
                 controller: passwordCon,
                 obscureText: true,
+                style: TextStyle(color: Colors.black),
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                    hintText: "Password",hintStyle: TextStyle(color: Colors.black), border: InputBorder.none),
+                    hintText: "Password",
+                    hintStyle: TextStyle(color: Colors.black),
+                    border: InputBorder.none),
                 onChanged: (value) {
                   setState(() {
                     _password = value.trim();
@@ -126,7 +184,8 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
+                  border: Border.all(
+                      color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
               width: MediaQuery.of(context).size.width * 0.9,
@@ -135,13 +194,23 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 20,
             ),
+
+            // LargeCurveButton(
+            //   text: "LOGIN",
+            //   height: .07,
+            //   width: 0.5,
+            //   textcolor: Theme.of(context).textTheme.headline6,
+            //   color: Theme.of(context).buttonColor,
+            //   borderadius: 30,
+            //   onClick: () {},
+            // ),
+
             //login button
             ButtonTheme(
               height: MediaQuery.of(context).size.height * .07,
               minWidth: MediaQuery.of(context).size.width * .4,
               child: FlatButton(
                   disabledColor: Theme.of(context).accentColor,
-                  disabledTextColor: Colors.white,
                   color: Theme.of(context).buttonColor,
                   child: Text(
                     "LOGIN",
