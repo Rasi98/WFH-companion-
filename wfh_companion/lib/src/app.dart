@@ -15,11 +15,11 @@ class App extends StatelessWidget {
         brightness: Brightness.dark,
         primaryColor: Colors.yellow[500],  
         accentColor: Colors.black26, 
-        buttonColor: Colors.yellow[800],
+        buttonColor: Colors.yellow[600],
         dividerColor: Colors.yellow[600],
         textTheme: TextTheme(
           headline1: TextStyle(fontSize: 20),
-          headline6: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w500),
+          headline6: TextStyle(color:Colors.black, fontSize: 20.0,fontWeight: FontWeight.w600),
           bodyText2:TextStyle(fontSize:20.0) )
       ),
       home: FirebaseAuth.instance.currentUser == null
