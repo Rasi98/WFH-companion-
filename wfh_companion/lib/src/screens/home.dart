@@ -69,43 +69,43 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * .15,
             ),
-            MainMenuCard(),
+            MainMenuCard(asset: "assets/1.png",text: "Notification",),
             SizedBox(
               width: MediaQuery.of(context).size.width * .1,
             ),
-            MainMenuCard()
+            MainMenuCard(asset: "assets/5.png",text: "Fitness",)
           ],
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .02,
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .15,
-            ),
-            MainMenuCard(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .1,
-            ),
-            MainMenuCard()
-          ],
-        ),
+        // Row(
+        //   children: [
+        //     SizedBox(
+        //       width: MediaQuery.of(context).size.width * .15,
+        //     ),
+        //     MainMenuCard(),
+        //     SizedBox(
+        //       width: MediaQuery.of(context).size.width * .1,
+        //     ),
+        //     MainMenuCard()
+        //   ],
+        // ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .02,
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .15,
-            ),
-            MainMenuCard(),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * .1,
-            ),
-            MainMenuCard()
-          ],
-        ),
+        // Row(
+        //   children: [
+        //     SizedBox(
+        //       width: MediaQuery.of(context).size.width * .15,
+        //     ),
+        //     MainMenuCard(),
+        //     SizedBox(
+        //       width: MediaQuery.of(context).size.width * .1,
+        //     ),
+        //     MainMenuCard()
+        //   ],
+        // ),
       ],
     ));
   }

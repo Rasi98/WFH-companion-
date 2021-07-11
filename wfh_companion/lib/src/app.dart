@@ -21,7 +21,7 @@ class App extends StatelessWidget {
           headline1: TextStyle(fontSize: 20),
           headline6: TextStyle(color:Colors.black, fontSize: 20.0,fontWeight: FontWeight.w600),
           bodyText2:TextStyle(fontSize:20.0),
-          bodyText1: TextStyle(fontSize: 20.0,color: Colors.red)
+          bodyText1: TextStyle(fontSize: 20.0,color: Colors.red)//warning alert
            )
       ),
       home: FirebaseAuth.instance.currentUser == null
