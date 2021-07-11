@@ -23,11 +23,11 @@ class MainMenuCard extends StatelessWidget {
           ),
           Row(
             children: [
-              SizedBox(width: MediaQuery.of(context).size.width * .005),
+              SizedBox(width: MediaQuery.of(context).size.width * .03),
               IconButton(
                 icon: Image.asset(asset),
-                iconSize: 95,
-                onPressed: () {},
+                iconSize: 85,
+                onPressed: onClick,
               )
             ],
           ),
