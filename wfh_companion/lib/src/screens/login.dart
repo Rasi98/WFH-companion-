@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 50,
               child: Text(
                 invalidDetails ? "Invalid Login Details.." : "",
-                style: TextStyle(color: Colors.red, fontSize: 20),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             //Email
