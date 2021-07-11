@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wfh_companion/src/component/card_component.dart';
 import 'package:wfh_companion/src/screens/login.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -68,39 +69,43 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * .15,
             ),
-            Container(
-              //notification button area
-              width: MediaQuery.of(context).size.width * .3,
-              height: MediaQuery.of(context).size.height * .2,
-              decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .01,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(width: MediaQuery.of(context).size.width * .005),
-                      IconButton(
-                        icon: Image.asset('assets/1.png'),
-                        iconSize: 95,
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                  Text(
-                    'Notifications',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  )
-                ],
-              ),
-            )
+            MainMenuCard(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+            ),
+            MainMenuCard()
           ],
-        )
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .02,
+        ),
+        Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .15,
+            ),
+            MainMenuCard(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+            ),
+            MainMenuCard()
+          ],
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .02,
+        ),
+        Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .15,
+            ),
+            MainMenuCard(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+            ),
+            MainMenuCard()
+          ],
+        ),
       ],
     ));
   }
