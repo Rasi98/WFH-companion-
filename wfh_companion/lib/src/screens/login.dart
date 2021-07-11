@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailCon,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                    hintText: "Email", border: InputBorder.none),
+                    hintText: "Email",hintStyle: TextStyle(color: Colors.black),border: InputBorder.none),
                 onChanged: (value) {
                   setState(() {
                     _email = value.trim();
@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
+                  color: Colors.white,
                   border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                    hintText: "Password", border: InputBorder.none),
+                    hintText: "Password",hintStyle: TextStyle(color: Colors.black), border: InputBorder.none),
                 onChanged: (value) {
                   setState(() {
                     _password = value.trim();
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
+                  color: Colors.white,
                   border: Border.all(color: Theme.of(context).primaryColor, width: 2.0),
                   borderRadius: BorderRadius.circular(10.0)),
               height: MediaQuery.of(context).size.height * .08,
