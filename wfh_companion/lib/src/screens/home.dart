@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .12,
           decoration: BoxDecoration(
-            color: Colors.yellow.shade500,
+            color: Color.fromRGBO(159, 148, 6, 1),
           ),
           child: Column(
             children: [
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ), //end of cunsom app bar
         SizedBox(
-          height: MediaQuery.of(context).size.height * .06,
+          height: MediaQuery.of(context).size.height * .09,
         ),
         Row(
           children: [
