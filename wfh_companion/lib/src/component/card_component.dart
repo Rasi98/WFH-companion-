@@ -12,10 +12,11 @@ class MainMenuCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * .3,
+      width: MediaQuery.of(context).size.width * .32,
       height: MediaQuery.of(context).size.height * .2,
       decoration: BoxDecoration(
-          color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+          color: Color.fromRGBO(93, 94, 96, 1),
+          borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           SizedBox(
