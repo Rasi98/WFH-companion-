@@ -88,107 +88,53 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
 
             //TextField component email
-            // TextFieldV1(
-            //   fieldcolor: Colors.white,
-            //   padding: 10,
-            //   bordercolor: Theme.of(context).primaryColor,
-            //   borderwidth: 2.0,
-            //   borderradius: 10.0,
-            //   controler: emailCon,
-            //   height: .08,
-            //   width: 0.9,
-            //   obsecure: false,
-            //   keyboardtype: TextInputType.emailAddress,
-            //   textcolor: Colors.black,
-            //   hint: "Email",
-            //   hintcolor: Colors.black,
-            //   onchange: (value) {
-            //     setState(() {
-            //       _email = value.trim();
-            //       validated = validate();
-            //     });
-            //   },
-            // ),
-            //Email
-            Container(
-              child: TextField(
-                controller: emailCon,
-                style: TextStyle(color: Colors.black),
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    hintText: "Email",
-                    hintStyle: TextStyle(color: Colors.black),
-                    border: InputBorder.none),
-                onChanged: (value) {
-                  setState(() {
-                    _email = value.trim();
-                    validated = validate();
-                  });
-                },
-              ),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      color: Theme.of(context).primaryColor, width: 2.0),
-                  borderRadius: BorderRadius.circular(10.0)),
-              height: MediaQuery.of(context).size.height * .08,
-              width: MediaQuery.of(context).size.width * 0.9,
+            TextFieldV1(
+              fieldcolor: Colors.white,
+              padding: 10,
+              bordercolor: Theme.of(context).primaryColor,
+              borderwidth: 2.0,
+              borderradius: 10.0,
+              controler: emailCon,
+              height: .08,
+              width: 0.9,
+              obsecure: false,
+              keyboardtype: TextInputType.emailAddress,
+              textcolor: Colors.black,
+              hint: "Email",
+              hintcolor: Colors.black,
+              onchange: (value) {
+                setState(() {
+                  _email = value.trim();
+                  validated = validate();
+                });
+              },
             ),
 
             SizedBox(
               height: 20,
             ),
 
-            //password field Component
-            // TextFieldV1(
-            //   fieldcolor: Colors.white,
-            //   padding: 10,
-            //   bordercolor: Theme.of(context).primaryColor,
-            //   borderwidth: 2.0,
-            //   borderradius: 10.0,
-            //   controler: passwordCon,
-            //   height: .08,
-            //   obsecure: true,
-            //   width: 0.9,
-            //   keyboardtype: TextInputType.emailAddress,
-            //   textcolor: Colors.black,
-            //   hint: "Password",
-            //   hintcolor: Colors.black,
-            //   onchange: (value) {
-            //     setState(() {
-            //       _password = value.trim();
-            //       validated = validate();
-            //     });
-            //   },
-            // ),
-
-            //password
-            Container(
-              child: TextField(
-                controller: passwordCon,
-                obscureText: true,
-                style: TextStyle(color: Colors.black),
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    hintText: "Password",
-                    hintStyle: TextStyle(color: Colors.black),
-                    border: InputBorder.none),
-                onChanged: (value) {
-                  setState(() {
-                    _password = value.trim();
-                    validated = validate();
-                  });
-                },
-              ),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      color: Theme.of(context).primaryColor, width: 2.0),
-                  borderRadius: BorderRadius.circular(10.0)),
-              height: MediaQuery.of(context).size.height * .08,
-              width: MediaQuery.of(context).size.width * 0.9,
+            //TextField component password
+            TextFieldV1(
+              fieldcolor: Colors.white,
+              padding: 10,
+              bordercolor: Theme.of(context).primaryColor,
+              borderwidth: 2.0,
+              borderradius: 10.0,
+              controler: passwordCon,
+              height: .08,
+              obsecure: true,
+              width: 0.9,
+              keyboardtype: TextInputType.emailAddress,
+              textcolor: Colors.black,
+              hint: "Password",
+              hintcolor: Colors.black,
+              onchange: (value) {
+                setState(() {
+                  _password = value.trim();
+                  validated = validate();
+                });
+              },
             ),
 
             SizedBox(
