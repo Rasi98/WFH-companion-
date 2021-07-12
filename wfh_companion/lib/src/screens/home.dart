@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .12,
           decoration: BoxDecoration(
-            color: Colors.red,
+            color: Colors.yellow.shade500,
           ),
           child: Column(
             children: [
@@ -69,43 +69,52 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * .15,
             ),
-            MainMenuCard(asset: "assets/1.png",text: "Notification",),
+            MainMenuCard(
+              asset: "assets/notification.png",
+              text: "Notification",
+              onClick: () {},
+            ),
             SizedBox(
               width: MediaQuery.of(context).size.width * .1,
             ),
-            MainMenuCard(asset: "assets/5.png",text: "Fitness",)
+            MainMenuCard(
+                asset: "assets/fitness.png", text: "Fitness", onClick: () {})
           ],
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .02,
         ),
-        // Row(
-        //   children: [
-        //     SizedBox(
-        //       width: MediaQuery.of(context).size.width * .15,
-        //     ),
-        //     MainMenuCard(),
-        //     SizedBox(
-        //       width: MediaQuery.of(context).size.width * .1,
-        //     ),
-        //     MainMenuCard()
-        //   ],
-        // ),
+        Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .15,
+            ),
+            MainMenuCard(
+                asset: "assets/time.png", text: "Check In/Out", onClick: () {}),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+            ),
+            MainMenuCard(
+                asset: "assets/track.png", text: "Tracking", onClick: () {})
+          ],
+        ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .02,
         ),
-        // Row(
-        //   children: [
-        //     SizedBox(
-        //       width: MediaQuery.of(context).size.width * .15,
-        //     ),
-        //     MainMenuCard(),
-        //     SizedBox(
-        //       width: MediaQuery.of(context).size.width * .1,
-        //     ),
-        //     MainMenuCard()
-        //   ],
-        // ),
+        Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .15,
+            ),
+            MainMenuCard(
+                asset: "assets/message.png", text: "Message", onClick: () {}),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * .1,
+            ),
+            MainMenuCard(
+                asset: "assets/settings.png", text: "Settings", onClick: () {})
+          ],
+        ),
       ],
     ));
   }
